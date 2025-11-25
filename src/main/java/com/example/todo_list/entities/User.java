@@ -1,15 +1,14 @@
 package com.example.todo_list.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
@@ -21,6 +20,7 @@ public class User {
     private String email;
 
     @OneToMany
+    @ToString.Exclude
     private List<Task> tasks;
 
 

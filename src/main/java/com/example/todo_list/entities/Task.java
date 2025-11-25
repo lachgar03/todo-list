@@ -2,14 +2,13 @@ package com.example.todo_list.entities;
 
 import com.example.todo_list.shared.Status;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Task {
@@ -25,5 +24,7 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @ToString.Exclude
+
     private User user;
 }

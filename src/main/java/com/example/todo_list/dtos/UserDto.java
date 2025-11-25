@@ -1,5 +1,6 @@
 package com.example.todo_list.dtos;
 
+import jakarta.validation.constraints.Email;
 import lombok.Builder;
 import lombok.Data;
 
@@ -8,5 +9,6 @@ import lombok.Data;
 public class UserDto {
     Long id;
     String username;
+    @Email
     String email;
 }
